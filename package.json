@@ -13,7 +13,7 @@
     "webpack-dev-server": "^1.15.1"
   },
   "scripts": {
-    "start": "webpack --watch",
+    "start": "webpack --watch --display-modules -v",
     "dev-server": "webpack-dev-server --progress"
   },
   "devDependencies": {

@@ -3,17 +3,46 @@ var path = require("path");
 var ip = require("ip");
 
 module.exports = {
-    entry: __dirname + "/app/main.js",
+    context: __dirname + "/app",
+    entry: {
+        home: "./home",
+        about: "./about",
+        main: "./main",
+        common: "./common"
+    },
+
     output: {
         path: __dirname + "/public",
-        filename: "bundle.js"
+        filename: "[name].js",
+        library: "[name]",
+        sourceMapFilename: "debugging/[file].map"
     },
+
+    /** Start: Настройки для поиска модулей*/
+    resolve: {
+        modulesDirectories: ["node_modules"],
+        extensions: ["", ".js"]
+    },
+
+    resolveLoader: {
+        modulesDirectories: ["node_modules"],
+        moduleTemplates: ["*-loader"],
+        extensions: ["", ".js"]
+    },
+    /** End */
 
     devtool: "source-map",
 
     watchOptions: {
         aggregateTimeout: 100
     },
+
+    plugins: [
+        new webpack.NoErrorsPlugin(),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "common"
+        })
+    ],
 
     module: {
         loaders: [

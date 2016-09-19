@@ -19,6 +19,7 @@ module.exports = {
         sourceMapFilename: "debugging/[file].map"
     },
 
+    
     /** Start: Настройки для поиска модулей*/
     resolve: {
         modulesDirectories: ["node_modules"],

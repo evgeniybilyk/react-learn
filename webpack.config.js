@@ -1,18 +1,19 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require("webpack");
 var path = require("path");
 var ip = require("ip");
 
 module.exports = {
-    context: __dirname + "/app",
+    context: __dirname,
     entry: {
-        home: "./home",
-        about: "./about",
-        main: "./main",
-        common: "./common"
+        'js/home': "./src/js/home",
+        'js/about': "./src/js/about",
+        'js/main': "./src/js/main",
+        'js/common': "./src/js/common"
     },
 
     output: {
-        path: __dirname + "/public",
+        path: path.join(__dirname, 'public'),
         filename: "[name].js",
         library: "[name]",
         sourceMapFilename: "debugging/[file].map"
@@ -40,7 +41,13 @@ module.exports = {
     plugins: [
         new webpack.NoErrorsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
-            name: "common"
+            name: "js/common"
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Learn Webpack',
+            template: 'src/templates/index.html.tpl',
+            inject: true,
+            cache: true
         })
     ],
 
@@ -55,6 +62,10 @@ module.exports = {
                 }
             }
         ]
+    },
+
+    externals: {
+        lodash2: "_"
     },
 
     devServer: {

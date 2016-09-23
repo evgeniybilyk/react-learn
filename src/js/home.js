@@ -1,5 +1,5 @@
 'use strict';
 
-module.export = {
+module.exports = {
     "page" : "home"
 };

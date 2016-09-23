@@ -6,17 +6,21 @@
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-preset-react": "^6.11.1",
+    "exports-loader": "^0.6.3",
     "html-webpack-plugin": "^2.22.0",
+    "imports-loader": "^0.6.5",
     "ip": "^1.1.3",
+    "lodash": "^4.16.1",
     "path": "^0.12.7",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "underscore": "^1.8.3",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
   },
   "scripts": {
-    "start": "webpack --watch --display-modules -v",
-    "dev-server": "webpack-dev-server --progress"
+    "start": "webpack --profile --display-modules --display-reasons --watch",
+    "dev-server": "webpack-dev-server --progress --profile --display-reasons"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",

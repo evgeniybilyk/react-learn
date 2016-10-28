@@ -768,6 +768,11 @@
         }
       }
     },
+    "expose-loader": {
+      "version": "0.7.1",
+      "from": "expose-loader@*",
+      "resolved": "https://registry.npmjs.org/expose-loader/-/expose-loader-0.7.1.tgz"
+    },
     "express": {
       "version": "4.14.0",
       "from": "express@>=4.13.3 <5.0.0",

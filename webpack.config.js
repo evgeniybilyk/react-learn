@@ -71,7 +71,7 @@ module.exports = {
             },
             {
                 test: /old.js$/,
-                loader: 'imports?workSettings=>{delay:500}!exports?someFunc'
+                loader: 'expose?someFunc!imports?workSettings=>{delay:500}!exports?someFunc'
             }
         ],
 

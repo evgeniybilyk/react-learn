@@ -5,6 +5,7 @@ let old = require('old');
 //old.someFunc();
 old();
 console.log('old:', old);
+console.log('someFunc:', someFunc);
 
 let users = [
     {id: "aqwe",name: "Vasya"},
